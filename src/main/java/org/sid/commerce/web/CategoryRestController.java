@@ -3,8 +3,11 @@ package org.sid.commerce.web;
 import java.util.List;
 
 import org.sid.commerce.entities.Category;
+import org.sid.commerce.entities.Product;
 import org.sid.commerce.entities.dao.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin("*")
 public class CategoryRestController {
 	
 	@Autowired
@@ -52,6 +56,11 @@ public class CategoryRestController {
 		).orElseGet(()->{
 			return categoryRepository.save(newCategory);
 		});
+	}
+	
+	@DeleteMapping(path="deleteCategory")
+	public void deleteCategory(@RequestBody Category category) {
+		categoryRepository.delete(category);
 	}
 	
 }
