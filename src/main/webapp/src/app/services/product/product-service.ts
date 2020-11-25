@@ -28,4 +28,8 @@ export class ProductService{
   getAllProducts(){
     return this.httpClient.get(this.localhost + 'products');
   }
+
+  getProduct(id){
+    return this.httpClient.get(this.localhost + 'product/' + id);
+  }
 }

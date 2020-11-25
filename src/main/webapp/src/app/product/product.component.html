@@ -1,3 +1,13 @@
+<!--Meet the team-->
+<div class="container-fluid padding">
+  <div class="row welcome text-center">
+      <div class="col-12">
+          <h1 class="display-4">Nos produits</h1>
+      </div>
+      <hr class="my-4">
+  </div>
+</div>
+
 <div class="container-fluid padding">
   <div class="row padding">
 
@@ -9,7 +19,7 @@
               <p class="card-text">
                   {{p.description}}
               </p>
-              <a href="#" class="btn btn-outline-secondary">See Profile</a>
+              <a (click)="onProductDetails(p.id)" class="btn btn-outline-secondary">See Profile</a>
           </div>
       </div>
     </div>
