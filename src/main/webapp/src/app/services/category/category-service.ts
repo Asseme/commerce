@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryServiceService {
+export class CategoryService {
   localhost = 'http://localhost:8080/';
   constructor(private httpClient: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class CategoryServiceService {
     ;
   }
   // tslint:disable-next-line: typedef
-  getAllCategory(){
-    this.httpClient.get(this.localhost + 'getAllCategory');
+  getAllCategories(){
+    return this.httpClient.get(this.localhost + 'getAllCategories');
   }
 }

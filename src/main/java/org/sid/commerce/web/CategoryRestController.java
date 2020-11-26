@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin("*")
+@RequestMapping("/")
 public class CategoryRestController {
 	
 	@Autowired
@@ -29,22 +31,22 @@ public class CategoryRestController {
 		
 	}
 	
-	@GetMapping(path="/category")
+	@GetMapping(path="getAllCategories")
 	public List<Category> getAllCategory(){
 		return categoryRepository.findAll();
 	}
 	
-	@GetMapping(path="/category/{id}")
+	@GetMapping(path="getCategory/{id}")
 	public Category getCategory(@PathVariable Long id) {
 		return categoryRepository.findById(id).get();
 	}
 	
-	@PostMapping(path="/category")
+	@PostMapping(path="createCategory")
 	public Category createCategory(@RequestBody Category category) {
 		return categoryRepository.save(category);
 	}
 	
-	@PutMapping(path="/category")
+	@PutMapping(path="/updateCategory")
 	public Category updateCategory(@RequestBody Category newCategory, @PathVariable Long id){
 		return categoryRepository.findById(id).
 			map(

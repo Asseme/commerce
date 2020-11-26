@@ -43,6 +43,12 @@ public class ProductRestController {
 		return productRepository.findById(id).get();
 	}
 	
+	
+	@GetMapping(path="productsByCategory/{id}")
+	public List<Product> findAllByCategoryById(@PathVariable Long id){
+		return productRepository.findAllByCategoryById(id);
+	}
+	
 	//Post Requests
 	@PostMapping(path="createProduct")
 	public Product saveProduct(@RequestBody Product newProduct) {
