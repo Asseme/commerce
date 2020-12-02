@@ -43,7 +43,7 @@ public class ProductRestController {
 		return productRepository.findById(id).get();
 	}
 	
-	
+	@CrossOrigin("*")
 	@GetMapping(path="productsByCategory/{id}")
 	public List<Product> findAllByCategoryById(@PathVariable Long id){
 		return productRepository.findAllByCategoryById(id);

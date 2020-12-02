@@ -1,4 +1,131 @@
-<app-navbar>
-</app-navbar>
-<app-body></app-body>
-<app-footer></app-footer>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a (click)="getProducts(0)" class="nav-link clickable">Home</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item clickable" *ngFor="let c of categories" (click)="getProductByCategory(c)">{{c.name}}</a>
+        </div>
+      </li>
+
+      <li routerLinkActive="active" class="nav-item">
+        <a routerLink="about" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+ <!--Images Slider
+ <div id="slides" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+      <li data-target="#slides" data-slide-to="0" class="active"></li>
+      <li data-target="#slides" data-slide-to="1"></li>
+      <li data-target="#slides" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="images/model-in-gold-fashion.png" width="100%" alt="" style="height: 100%;" >
+      </div>
+      <div class="carousel-item">
+          <img src="images/a-model-in-khaki-trousers-and-a-striped-t-shirt.png" width="100%" alt="">
+      </div>
+      <div class="carousel-item">
+          <img src="images/natural-spa-decor.png" width="100%" alt="">
+      </div>
+  </div>
+</div>-->
+
+<!--jumbotron
+<div class="container-fluid">
+  <div class="row jumbotron">
+      <div class="col-sm-12 col-xs-12 col-lg-9 col-xl-10 col-md-9">
+          <p class="lead">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              In, minima. Dolorem nobis soluta repellendus voluptate culpa
+              dolores? Nisi corrupti eaque,
+              nobis voluptate, sint totam quidem ad enim facere sunt dolores?
+          </p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+          <a href="#"><button class="btn btn-outline-secondary" type="button">
+              Web Hosting
+          </button></a>
+      </div>
+  </div>
+</div>-->
+
+
+<!--Cards-->
+
+<router-outlet></router-outlet>
+
+<!--Connect section
+<div class="container-fluid padding">
+  <div class="row text-center padding">
+      <div class="col-12">
+          <h2>Connect</h2>
+      </div>
+      <div class="col-12 social padding">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter "></i></a>
+          <a href="#"><i class="fab fa-google-plus-g "></i></a>
+          <a href="#"><i class="fab fa-instagram "></i></a>
+          <a href="#"><i class="fab fa-youtube "></i></a>
+      </div>
+  </div>
+</div>-->
+
+<!--Footer-->
+<!--<footer>
+  <div class="container-fluid padding">
+      <div class="row text-center">
+          <div class="col-md-4">
+              <img src="images/w3newbie.png" alt="">
+              <hr class="light">
+              <p>555-5555-55555</p>
+              <p>email@zemail.com</p>
+              <p>100 street name</p>
+              <p>City, State, 0000</p>
+          </div>
+          <div class="col-md-4">
+              <hr class="light">
+              <h5>Our hour</h5>
+              <hr class="light">
+              <p>Monday: 9am - 5pm</p>
+              <p>Saturday: 10am - 4pm</p>
+              <p>Sunday: closed</p>
+          </div>
+          <div class="col-md-4">
+              <hr class="light">
+              <h5>Our hour</h5>
+              <hr class="light">
+              <p>City, State, 0000</p>
+              <p>City, State, 0000</p>
+              <p>City, State, 0000</p>
+          </div>
+      </div>
+      <div class="col-12">
+         <hr class="light">
+         <h5>&copy porno.com</h5>
+      </div>
+
+
+  </div>
+
+</footer>-->
+
+

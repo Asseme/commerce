@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     FooterComponent,
     ProductComponent,
     AboutComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+
   ],
   imports: [
     BrowserModule,

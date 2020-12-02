@@ -15,6 +15,7 @@ public interface ProductRepository extends JpaRepository<Product,Long>{
 	 * Page<User> findByLastname(String lastname, Pageable pageable);
 	 */
 	/* @Query("select u from User u where u.lastname like ?1%") */
+	@CrossOrigin("*")
 	@Query(value = "SELECT p FROM Product p WHERE p.category.id = ?1")
 	public List<Product> findAllByCategoryById(Long id);
 }

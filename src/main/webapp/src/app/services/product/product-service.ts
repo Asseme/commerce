@@ -32,4 +32,8 @@ export class ProductService{
   getProduct(id){
     return this.httpClient.get(this.localhost + 'product/' + id);
   }
+
+  getProductsByCategory(id){
+    return this.httpClient.get(this.localhost + 'productsByCategory/' + id);
+  }
 }

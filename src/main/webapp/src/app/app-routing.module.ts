@@ -6,13 +6,14 @@ import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [
-  { path: '', component: ProductComponent },
+  { path: '', redirectTo:'productsByCategory/0', pathMatch:'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'product/:id', component: ProductDetailsComponent }
+  { path: 'product/:id', component: ProductDetailsComponent },
+  { path: 'productsByCategory/:id', component: ProductComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
