@@ -22,4 +22,7 @@ export class ProductDetailsComponent implements OnInit {
     )
   }
 
+  getProductPhoto(id){
+    return this.productService.getProductPhoto(id);
+  }
 }

@@ -36,4 +36,8 @@ export class ProductService{
   getProductsByCategory(id){
     return this.httpClient.get(this.localhost + 'productsByCategory/' + id);
   }
+
+  getProductPhoto(id){
+    return this.localhost + 'productPhoto/' + id;
+  }
 }

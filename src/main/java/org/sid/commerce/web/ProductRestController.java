@@ -45,7 +45,8 @@ public class ProductRestController {
 	}
 	
 	@GetMapping(path="productPhoto/{id}", produces=MediaType.IMAGE_JPEG_VALUE)
-	public byte[]  getPhoto(@PathVariable Long id) throws IOException {
+	public byte[]  getPhoto(@PathVariable("id") Long id) throws IOException {
+		
 		Product p = productRepository.findById(id).get();
 		
 		return Files.readAllBytes(Paths.get(System.getProperty("user.home")+"/ecom/products/"+p.getPhoto()));

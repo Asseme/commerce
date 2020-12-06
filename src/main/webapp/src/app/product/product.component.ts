@@ -11,6 +11,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
   products;
   selectProduct;
   categoryId;
+  photo;
+
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -29,11 +31,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.categoryId = this.route.snapshot.params.id;
     this.getProducts(this.categoryId);
 
-
   }
 
   ngAfterViewInit(): void {
-
+    // this.getproductPhoto(1);
     console.log('after');
   }
 
@@ -67,9 +68,9 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   }
 
-  getProductsBycategory(id){
+  getProductPhoto(id){
 
-
+    return this.productService.getProductPhoto(id);
   }
 
   onProductDetails(id){
