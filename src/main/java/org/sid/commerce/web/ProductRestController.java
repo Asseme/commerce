@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.sid.commerce.entities.Product;
 import org.sid.commerce.entities.dao.ProductRepository;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,6 +42,13 @@ public class ProductRestController {
 	@GetMapping(path="product/{id}")
 	public Product getProduct(@PathVariable Long id) {
 		return productRepository.findById(id).get();
+	}
+	
+	@GetMapping(path="productPhoto/{id}", produces=MediaType.IMAGE_JPEG_VALUE)
+	public byte[]  getPhoto(@PathVariable Long id) throws IOException {
+		Product p = productRepository.findById(id).get();
+		
+		return Files.readAllBytes(Paths.get(System.getProperty("user.home")+"/ecom/products/"+p.getPhoto()));
 	}
 	
 	@CrossOrigin("*")

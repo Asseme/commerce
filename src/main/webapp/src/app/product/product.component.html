@@ -13,12 +13,14 @@
 
     <div class="col-md-4" *ngFor="let p of products">
       <div class="card">
-          <img src="#" alt="" class="card-img-top">
+        <img src="assets/img/catalogue_bases-neutres_huile-soin-cheveux-7-huiles_250ml_3.jpg" alt="" class="card-img-top">
           <div class="card-body">
               <h4 class="card-title">{{p.name}}</h4>
               <p class="card-text">
                   {{p.description}}
+
               </p>
+              <h3>{{this.productService.getProductPhoto(p.id)}} </h3>
               <a (click)="onProductDetails(p.id)" class="btn btn-outline-secondary">See Profile</a>
           </div>
       </div>
