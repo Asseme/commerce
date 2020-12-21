@@ -10,6 +10,8 @@ import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FormsModule } from '@angular/forms';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 @NgModule({
@@ -21,12 +23,14 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductComponent,
     AboutComponent,
     ProductDetailsComponent,
+    SearchResultComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

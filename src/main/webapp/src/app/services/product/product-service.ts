@@ -40,4 +40,8 @@ export class ProductService{
   getProductPhoto(id){
     return this.localhost + 'productPhoto/' + id;
   }
+
+  getProductByKeyWord(mc){
+    return this.httpClient.get(this.localhost + 'searchProducts/' + mc);
+  }
 }

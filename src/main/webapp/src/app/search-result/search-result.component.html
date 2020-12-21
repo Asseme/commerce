@@ -1,0 +1,27 @@
+<div class="container-fluid padding">
+  <div class="row welcome text-center">
+      <div class="col-12">
+          <h1 class="display-4">Resultats de recherche: "{{mc}}"</h1>
+      </div>
+      <hr class="my-4">
+  </div>
+</div>
+
+<div class="container-fluid padding">
+  <div class="row padding">
+
+    <div class="col-md-4" *ngFor="let p of products">
+      <div class="card">
+        <img src="{{getProductPhoto(p.id)}}" alt="" class="card-img-top">
+          <div class="card-body">
+              <h4 class="card-title">{{p.name}}</h4>
+              <p class="card-text">
+                  {{p.description}}
+              </p>
+              <a (click)="onProductDetails(p.id)" class="btn btn-outline-secondary">See Profile</a>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>

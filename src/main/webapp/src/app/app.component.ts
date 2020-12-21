@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from './services/category/category-service';
 
@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   categories;
   products;
+  mc: string = "";
   constructor(private categoryService: CategoryService, private router: Router ) { }
 
   ngOnInit(): void {
@@ -32,6 +33,13 @@ export class AppComponent implements OnInit {
   getProductByCategory(c){
     this.router.navigate(['productsByCategory/',c.id]);
   }
+
+
+  getProductByKeyword(mc){
+    this.router.navigate(['searchResult/', mc])
+    console.log(mc)
+  }
+
 
   getProducts(id){
     this.router.navigate(['productsByCategory/',id]);

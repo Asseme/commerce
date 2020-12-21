@@ -26,6 +26,10 @@
       </li>
 
     </ul>
+
+    <input class="form-control me-2" type="text" aria-label="Search" [(ngModel)]="mc" />
+    <button class="btn btn-outline-success" (click)="getProductByKeyword(mc)" type="submit">Search</button>
+
   </div>
 </nav>
 

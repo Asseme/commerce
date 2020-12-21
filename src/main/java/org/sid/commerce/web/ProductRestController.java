@@ -99,6 +99,11 @@ public class ProductRestController {
 		productRepository.delete(product);
 	}
 	
+	@GetMapping(path="searchProducts/{mc}")
+	public List<Product> searchProducts(@PathVariable String mc){
+		return productRepository.findAllByNameContains(mc);
+	}
+	
 	
 	
 }
