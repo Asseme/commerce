@@ -8,7 +8,7 @@ agent any
     }
     stage('Test'){
       steps{
-        sh '/usr/local/Cellar/maven/3.8.1/mvn test'
+        sh '/usr/local/Cellar/maven/3.8.1/bin/mvn test'
       }
     } 
   }
